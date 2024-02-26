@@ -181,7 +181,7 @@ void I_instructionExecute(char *instr,char Tab[35][10],char RAM[][4]){
 		egal = False;
 		egal1 = False;
 		egal2 = False;
-		int cmpt1 = 0, cmpt2 = 0, j, k;
+		int j, k;
 		char rt[N],offset[N],base[N];
 
 		for (i = 0;i < N;i++)rt[i] = '\0';
@@ -269,7 +269,7 @@ void I_instructionExecute(char *instr,char Tab[35][10],char RAM[][4]){
 			
 			egal = False;
 			egal1 = False;
-			int cmpt = 0, j;
+			int j;
 			/*instrCp is a copy of the initial address of the first element of the string*/
 			instr = instrCp;
 			
@@ -545,8 +545,8 @@ int main(int argc, char *argv[]){
 	Tab[1][7]='F';
 	Tab[2][7]='1';
 	
-	if (strcmp(argv[3],"-p"))executeFilePasAPas(argv[1],argv[2],Tab,RAM,RAMinst);
-	else if(strcmp(argv[3],"-n"))executeFile(argv[1],argv[2],Tab,RAM,RAMinst);
+	if (strcmp(argv[3],"-p")==0)executeFilePasAPas(argv[1],argv[2],Tab,RAM,RAMinst);
+	else if(strcmp(argv[3],"-n")==0)executeFile(argv[1],argv[2],Tab,RAM,RAMinst);
 	
 }
 

@@ -178,8 +178,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 			strcat(FourOctet,hint);
 			strcat(FourOctet,function);
 			binaryToHexa(FourOctet,hexa);
-			/*printf("==>> %s\n", FourOctet);/*i will delete after */
-			/*printf("==>> %s\n", hexa);/*i will delete after */
+			//printf("==>> %s\n", FourOctet);/*i will delete after 
+			//printf("==>> %s\n", hexa);/*i will delete after
 		}
 
 		/*-----------------the case where function is MFHI or MFLO----------------------*/
@@ -192,8 +192,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 			strcat(FourOctet,zero1);
 			strcat(FourOctet,function);
 			binaryToHexa(FourOctet,hexa);
-			/*printf("==>> %s\n", FourOctet);/*i will delete after */
-			/*printf("==>> %s\n", hexa);/*i will delete after */
+			//printf("==>> %s\n", FourOctet);/*i will delete after 
+			//printf("==>> %s\n", hexa);/*i will delete after 
 		}
 	}	
 
@@ -245,8 +245,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 		strcat(FourOctet,zero);
 		strcat(FourOctet,function);
 		binaryToHexa(FourOctet,hexa);
-		/*printf("==>> %s\n",FourOctet );/*i will delete after */
-		/*printf("==>> %s\n",hexa );/*i will delete after */
+		//printf("==>> %s\n",FourOctet );/*i will delete after
+		//printf("==>> %s\n",hexa );/*i will delete after 
 	} 
 
 	/*-----------------------------------------------------------------------------------*/
@@ -307,8 +307,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 			strcat(FourOctet,zero);
 			strcat(FourOctet,function);
 			binaryToHexa(FourOctet,hexa);
-			/*printf("==>> %s\n",FourOctet );/*i will delete after */
-			/*printf("==>> %s\n",hexa );/*i will delete after */
+			//printf("==>> %s\n",FourOctet );/*i will delete after
+			//printf("==>> %s\n",hexa );/*i will delete after */
 		}
 
 		/*----------------------------------Second case----------------------------------*/
@@ -360,8 +360,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 				strcat(FourOctet,sa);
 				strcat(FourOctet,function);
 				binaryToHexa(FourOctet,hexa);
-				/*printf("==>> %s\n",FourOctet );/*i will delete after */
-				/*printf("==>> %s\n",hexa );/*i will delete after */
+				//printf("==>> %s\n",FourOctet );/*i will delete after 
+				//printf("==>> %s\n",hexa );/*i will delete after 
 			}
 			else{
 				char r[15]; 
@@ -380,8 +380,8 @@ void R_instructionToHexa(char *instr, char hexa[]){
 				strcat(FourOctet,sa);
 				strcat(FourOctet,function);
 				binaryToHexa(FourOctet,hexa);
-				/*printf("==>> %s\n",FourOctet );/*i will delete after */
-				/*printf("==>> %s\n",hexa );/*i will delete after */
+				//printf("==>> %s\n",FourOctet );/*i will delete after
+				//*printf("==>> %s\n",hexa );/*i will delete after 
 			}
 		}
 	}
@@ -427,7 +427,7 @@ void I_instructionToHexa(char *instr, char hexa[]){
 		egal = False;
 		egal1 = False;
 		egal2 = False;
-		int cmpt1 = 0, cmpt2 = 0, j, k;
+		int j, k;
 		char rt[N],offset[N],base[N];
 
 		for (i = 0;i < N;i++)rt[i] = '\0';
@@ -467,8 +467,8 @@ void I_instructionToHexa(char *instr, char hexa[]){
 		strcat(FourOctet,rt);
 		strcat(FourOctet,offset);
 		binaryToHexa(FourOctet,hexa);
-		/*printf("==>> %s\n",FourOctet );/*i will delete after */
-		/*printf("==>> %s\n",hexa );/*i will delete after */
+		//printf("==>> %s\n",FourOctet );/*i will delete after
+		//printf("==>> %s\n",hexa );/*i will delete after
 	}
 
 	else {
@@ -534,8 +534,8 @@ void I_instructionToHexa(char *instr, char hexa[]){
 			strcat(FourOctet,rt);
 			strcat(FourOctet,offset);
 			binaryToHexa(FourOctet,hexa);
-			/*printf("==>> %s\n",FourOctet );/*i will delete after */
-			/*printf("==>> %s\n",hexa );/*i will delete after */
+			//printf("==>> %s\n",FourOctet );/*i will delete after
+			//printf("==>> %s\n",hexa );/*i will delete after
 
 		}
 
@@ -548,7 +548,7 @@ void I_instructionToHexa(char *instr, char hexa[]){
 			
 			egal = False;
 			egal1 = False;
-			int cmpt = 0, j;
+			int  j;
 			/*instrCp is a copy of the initial address of the first element of the string*/
 			instr = instrCp;
 			
@@ -591,8 +591,8 @@ void I_instructionToHexa(char *instr, char hexa[]){
 				strcat(FourOctet,offset);
 				binaryToHexa(FourOctet,hexa);
 			}
-			/*printf("==>> %s\n",FourOctet );/*i will delete after */
-			/*printf("==>> %s\n",hexa );/*i will delete after */
+			//printf("==>> %s\n",FourOctet );/*i will delete after 
+			//printf("==>> %s\n",hexa );/*i will delete after
 		}
 	}
 }
@@ -644,8 +644,8 @@ void J_instructionToHexa(char *instr, char hexa[]){
 	/*We concanete the strings*/
 	strcat(FourOctet,target);
 	binaryToHexa(FourOctet,hexa);
-	/*printf("==>> %s\n",FourOctet );/*i will delete after */
-	/*printf("==>> %s\n",hexa );/*i will delete after */
+	//printf("==>> %s\n",FourOctet );/*i will delete after
+	//printf("==>> %s\n",hexa );/*i will delete after 
 }
 
 void instructionToHexa(char *instr, char hexa[]){
