@@ -1,9 +1,9 @@
 ## Change this variable
-MYNAME=ATTEpaul_BINANyohan
+MYNAME=BINANyohan
 # and perhaps this one
 SRCDOC=Devdoc.md
 # testfiles are in TESTDIR and IGNORE = list of files to ignore when taring
-TESTDIR = testfiles/
+TESTDIR = test/
 IGNORE = old_generate.c.old
 ## Do not change below please
 BIN = emul-mips
