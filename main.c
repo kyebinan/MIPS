@@ -362,6 +362,7 @@ void executeFile(char *source,char *destination,char Tab[35][10],char RAM[][4],c
 			j++;
 		}
 	}
+	afficheLogo("./mips.txt");
 	afficheRegistre(Tab);
 	afficheRam(RAM);
 	while(hexaToDecimal(Tab[34])/4 < j-2){
@@ -419,6 +420,7 @@ void executeFilePasAPas(char *source,char *destination,char Tab[35][10],char RAM
 		}
 	}
 	char c;
+	afficheLogo("./mips.txt");
 	while(hexaToDecimal(Tab[34])/4 < j-2){
 		instructionExecution(RAMinst[hexaToDecimal(Tab[34])/4], Tab, RAM);
 		afficheRegistre(Tab);
@@ -450,6 +452,23 @@ void instructionExecution(char *instr,char Tab[35][10],char RAM[][4]){
 		printf("ERROR\n");
 	}
 	initRegistre0(Tab);
+}
+
+void afficheLogo(const char *filePath){
+    FILE *fichier;
+    fichier = fopen(filePath, "r");
+
+    if (fichier == NULL) {
+        perror("Erreur lors de l'ouverture du fichier");
+        return; 
+    }
+
+    int caractere;
+    while ((caractere = fgetc(fichier)) != EOF) {
+        putchar(caractere);
+    }
+
+    fclose(fichier);
 }
 
 void afficheRegistre(char Tab[35][10]){
