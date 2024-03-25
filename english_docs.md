@@ -2,7 +2,21 @@
 # MIPS Emulator Documentation
 
 ## Overview
-This document provides an overview and detailed documentation of the MIPS emulator implemented in C. The emulator simulates the MIPS (Microprocessor without Interlocked Pipeline Stages) architecture, commonly used in academic settings for teaching purposes.
+This document provides an overview and detailed documentation of the MIPS emulator implemented in C. The emulator simulates the MIPS (Microprocessor without Interlocked Pipeline Stages) architecture, commonly used in academic settings for educational purposes.
+
+We have successfully coded all the necessary functions for our MIPS emulator and have tested them with our test files. Our emulator works well with these tests. However, it is necessary to be aware of certain important points regarding our syntax:
+
+- **Management of Register Mnemonics**: We have implemented support for register mnemonics, allowing for the use of `$zero` instead of `$0`. (See the `checkRegisters` function in the `Utility` module).
+
+- **Instructions Requiring an Offset or a Target**: For instructions that require an offset or a target, such as `JAL target`, `SW $2,offset($8)`, it is necessary for `offset` and `target` to be multiples of 4.
+
+- **Robustness to Spaces in MIPS Instructions**: Our code is robust to spaces in MIPS instructions; therefore, `ADD    $4,$2   ,$5` is treated the same as `ADD $4,$2,$5`. (See the `checkRegisters` function in the `Utility` module).
+
+- **Displaying Register States**: We have not stored the states of the registers in a text file; we display them in the console.
+
+- **Handling White Characters**: We have accounted for white characters that we are able to identify and ignore, with the exception of one that poses a problem for us. We do not know it, but it causes deletions on the line where it is placed. We have conducted research and sought help from a teaching assistant, but we have not been able to manage this bug.
+
+- **Displaying the Content of a Register in Hexadecimal**: We display the content of a register in hexadecimal and have adhered to the Big Endian convention of the MIPS processor.
 
 ## Modules Documentation
 
