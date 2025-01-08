@@ -22,7 +22,23 @@ int main(int argc, char **argv)
     }
 
     // TODO : Lire depuis fp_in, écrire les instructions assemblées dans fp_out
-    // ...
+    char *line = NULL;
+    size_t n = 0;
+    int lineno = 0;
+    /* Lecture du fichier ligne-par-ligne */
+    while(getline(&line, &n, fp_in) != -1) {
+        printf("Line #%d: [%s] (length %ld)\n", lineno, line, strlen(line));
+        lineno++;
+        //TODO faire les traitement qui s'imposent pour génerer l'assembleur
+        
+    
+        //TODO faire les traitement qui s'imposent pour prendre en compte les étiquettes
+        
+
+        //TODO faire les traitement qui s'imposent pour prendre en compte les directives
+    }
+
+    free(line);
 
     fclose(fp_in);
     fclose(fp_out);
