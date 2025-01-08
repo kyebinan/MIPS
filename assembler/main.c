@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include "parse.h"
+#include "utils.h"
+#include "encode.h"
 
 int main(int argc, char **argv)
 {
@@ -21,25 +24,32 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // TODO : Lire depuis fp_in, écrire les instructions assemblées dans fp_out
+    char ins[16], arg1[16], arg2[16], arg3[16];
     char *line = NULL;
     size_t n = 0;
     int lineno = 0;
     /* Lecture du fichier ligne-par-ligne */
     while(getline(&line, &n, fp_in) != -1) {
-        printf("Line #%d: [%s] (length %ld)\n", lineno, line, strlen(line));
-        lineno++;
-        //TODO faire les traitement qui s'imposent pour génerer l'assembleur
-        
-    
-        //TODO faire les traitement qui s'imposent pour prendre en compte les étiquettes
-        
-
-        //TODO faire les traitement qui s'imposent pour prendre en compte les directives
+      long len = strlen(line);
+      /* Permet de supprimer le caractère saut de ligne*/
+      if (len > 0 && line[len - 1] == '\n') {
+          line[len - 1] = '\0';
+      }
+      printf("Line #%d: [%s] (length %ld)\n", lineno, line, len);
+      simplify_punct(line);
+      remove_blanks(line);
+      //printf("Line #%d: [%s] (length %ld)\n\n", lineno, line, len);
+      if (strlen(line) == 0) {
+            lineno++;
+            continue;  // Sauter cette ligne et passer à la suivante
+      }
+      split_line(line, ins, arg1, arg2, arg3);
+      printf("ins : %s, arg1 : %s, arg2 : %s, arg3 : %s\n\n", ins, arg1, arg2, arg3);
+      lineno++;
     }
 
     free(line);
-
+    
     fclose(fp_in);
     fclose(fp_out);
     return 0;

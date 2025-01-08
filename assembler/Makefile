@@ -1,5 +1,4 @@
-# INDIQUEZ ICI : Votre nom et celui de votre binôme (sans espaces)
-AUTEURS := NomPrenom1_NomPrenom2
+NAME := bynan
 
 SRC := $(wildcard *.c)
 HDR := $(wildcard *.h)
@@ -18,7 +17,7 @@ clean:
 
 tar: clean
 	@ rm -f ../*.tgz
-	@ (cd ..; tar -cvzf "$(AUTEURS).tgz" *)
-	@ echo "==="; echo "Created: ../$(AUTEURS).tgz"
+	@ (cd ..; tar -cvzf "$(NAME).tgz" *)
+	@ echo "==="; echo "Created: ../$(NAME).tgz"
 
 .PHONY: test clean tar

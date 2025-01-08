@@ -1,23 +1,22 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
 
-void simplify_punct(char *str) {
-  // TODO : Écrire la fonction.
+void read_line_by_line(FILE *fp)
+{
+    char *line = NULL;
+    size_t n = 0;
+    int lineno = 0;
+    /* Lecture du fichier ligne-par-ligne */
+    while(getline(&line, &n, fp) != -1) {
+      long len = strlen(line);
+      /* Permet de supprimer le caractère saut de ligne*/
+      if (len > 0 && line[len - 1] == '\n') {
+          line[len - 1] = '\0';
+      }
+      printf("Line #%d: [%s] (length %ld)\n", lineno, line, len);
+      lineno++;
+    }
 
-}
-
-bool is_comment(const char *str) {
-  // TODO : Remplacer le code fourni.
-  
-  return false;
-}
-
-bool split_line(const char *str, char *ins, char *arg1, char *arg2, char *arg3) {
-  // TODO : Initialiser ins, arg1, arg2, arg3 avec strcpy()
-  
-  // TODO : Tester si la ligne est utile
-  
-  // TODO : Utiliser sscanf()
-  
-  return false;
+    free(line);
 }
